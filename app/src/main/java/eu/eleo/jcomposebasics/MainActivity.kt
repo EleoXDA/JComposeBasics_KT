@@ -3,6 +3,7 @@ package eu.eleo.jcomposebasics
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
@@ -35,7 +36,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun Greeting(name: String) {
     Surface(color = MaterialTheme.colors.primary) {
-        Text (text = "Hello $name!", modifier = Modifier.padding(24.dp))
+    Column {
+        Text(text = "Hello,", modifier = Modifier.padding(24.dp))
+        Text(text = "$name!", modifier = Modifier.padding(24.dp))
+    }
     }
 }
 @Composable
