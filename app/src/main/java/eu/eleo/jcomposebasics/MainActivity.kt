@@ -4,17 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import eu.eleo.jcomposebasics.ui.theme.JComposeBasicsTheme
 import androidx.compose.ui.unit.dp
+import eu.eleo.jcomposebasics.ui.theme.JComposeBasicsTheme
 
 
 class MainActivity : ComponentActivity() {
@@ -51,9 +52,16 @@ private fun Greeting(name: String) {
         color = MaterialTheme.colors.primary,
         modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)
     ) {
-        Column (modifier = Modifier.fillMaxWidth().padding(24.dp)) {
-            Text(text = "Hello,")
-            Text(text = "$name!")
+        Row (modifier = Modifier.padding(24.dp)) {
+            Column (modifier = Modifier.weight(1f)) {
+                Text(text = "Hello,")
+                Text(text = name)
+            }
+            OutlinedButton(
+                onClick = { /*TODO*/ }) {
+                Text(text = "Click me!")
+            }
+
     }
     }
 }
